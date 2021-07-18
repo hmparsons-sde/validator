@@ -8,11 +8,11 @@ namespace Validator
         {
             //PIN Validator
             Console.WriteLine("Enter a PIN between 4 and 8 digits inclusive.");
-            string pin = Console.ReadLine();
-            bool isDigit = true;
+            string pin = Console.ReadLine(); // reads user input
+            bool isDigit = true; // digit is a boolean; isDigit is a method to determine if the char is a number
             while (true)
             {
-                foreach (var digit in pin)
+                foreach (var digit in pin) // checks each entered digit char
                 {
                     if (Char.IsDigit(digit))
                     {
@@ -27,7 +27,7 @@ namespace Validator
                 }
                 break;
             }
-            bool validPin = pin.Length >= 4 && pin.Length <= 8 && isDigit == true;
+            bool validPin = pin.Length >= 4 && pin.Length <= 8 && isDigit == true; // conditions for a valid pin, per instructions in Notion
 
             if (validPin == true)
             {
@@ -40,12 +40,12 @@ namespace Validator
 
             //Phone Number Validator
             Console.WriteLine("Enter a phone number");
-            var userNumber = Console.ReadLine();
+            var userNumber = Console.ReadLine(); // read user input
             bool isPhoneDigit = true;
-            var phoneNumber = userNumber.Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", "");
+            var phoneNumber = userNumber.Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", ""); // replace any extraneous characters with empty
             while (true)
             {
-                foreach (var digit in phoneNumber)
+                foreach (var digit in phoneNumber) // checks that each remaining char is a number
                 {
                     if (Char.IsDigit(digit))
                     {
@@ -60,9 +60,9 @@ namespace Validator
                 }
                 break;
             }
-            bool validPhone = phoneNumber.Length == 10 && isPhoneDigit == true;
+            bool validPhone = phoneNumber.Length == 10 && isPhoneDigit == true; // conditions for valid phone number
 
-            if (validPhone == true)
+            if (validPhone == true) // command line output
             {
                 Console.WriteLine("Your phone number is valid");
             }
@@ -75,7 +75,7 @@ namespace Validator
             Console.WriteLine("Enter an email address");
             var userEmail = Console.ReadLine();
 
-            bool IsValidEmail(string email)
+            bool IsValidEmail(string email) // same as above; check for email format; using try/catch as practice :)
             {
                 try
                 {
